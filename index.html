@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FOXY.EXE</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="noise"></div>
+
+    <main>
+
+        <!-- BOOT SCREEN -->
+
+        <section class="boot-screen active" id="bootScreen">
+
+            <div class="terminal">
+
+                <div class="terminal-header">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="terminal-body">
+
+                    <p>C:\SYSTEM&gt; launch foxy.exe</p>
+
+                    <p id="line1"></p>
+                    <p id="line2"></p>
+                    <p id="line3"></p>
+
+                    <div class="boot-progress">
+                        <div id="bootProgress"></div>
+                    </div>
+
+                    <p id="bootStatus"></p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BIRTHDAY REVEAL -->
+
+        <section class="birthday-screen" id="birthdayScreen">
+
+            <div class="birthday-content">
+
+                <p class="system-label">
+                    SYSTEM MESSAGE // 24.09.2026
+                </p>
+
+                <h1>
+                    HAPPY
+                    <span>BIRTHDAY</span>
+                </h1>
+
+                <h2>
+                    FOXY 🦊
+                </h2>
+
+                <p class="intro-text">
+                    Apparently someone just leveled up.
+                    Again.
+                </p>
+
+                <button id="memoryButton">
+                    CLICK HERE
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- PHOTO -->
+
+        <section class="photo-screen" id="photoScreen">
+
+            <div class="photo-content">
+
+                <p class="system-label">
+                    MEMORY_001 // FOUND
+                </p>
+
+                <div class="photo-frame">
+
+                    <img
+                        src="/assets/foxy.jpeg"
+                        alt="Foxy"
+                    >
+
+                </div>
+
+                <h2>
+                    Evidence has been recovered. 📸
+                </h2>
+
+                <p>
+                    One picture.
+                    Zero explanations.
+                    Infinite memories.
+                </p>
+
+                <button id="incidentButton">
+                    OPEN THIS FILE
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SONG MEMORY -->
+
+        <section class="incident-screen" id="incidentScreen">
+
+            <div class="incident-content">
+
+                <p class="system-label">
+                    CLASSIFIED // ARCHIVE_002
+                </p>
+
+                <div class="song-photo-frame">
+
+                    <img
+                        src="/assets/foxy.jpeg"
+                        alt="Foxy memory"
+                    >
+
+                </div>
+
+                <h2 class="song-text">
+                    নিকষ কালো এই আধারে,
+                    <br>
+                    আমার বউ খেলা করে....
+                </h2>
+
+                <p class="incident-intro">
+                    Some memories simply refuse to disappear.
+                </p>
+
+                <button id="finalButton">
+                    CONTINUE
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL MESSAGE -->
+
+        <section class="final-screen" id="finalScreen">
+
+            <div class="final-content">
+
+                <div class="fox-icon">
+                    🦊
+                </div>
+
+                <p class="system-label">
+                    MESSAGE_FROM_FRIEND.exe
+                </p>
+
+                <h2>
+                    Happy Birthday, Foxy.
+                </h2>
+
+                <p>
+                    You're one of those people who can turn
+                    an ordinary moment into something worth
+                    remembering.
+                </p>
+
+                <p>
+                    So stay the same idiot we've all come
+                    to know and tolerate. 😂
+                </p>
+
+                <h3>
+                    Have an amazing birthday, bro. ❤️
+                </h3>
+
+                <button id="celebrateButton">
+                    CLICK HERE TO CELEBRATE 🎉
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div id="confetti"></div>
+
+
+    <script src="/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,561 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #050507;
+    --card: #0c0c11;
+    --border: #25252e;
+    --text: #f5f5f5;
+    --muted: #8b8b98;
+    --purple: #a855f7;
+    --pink: #ec4899;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(5, 5, 7, 0.72),
+            rgba(5, 5, 7, 0.72)
+        ),
+        url("/assets/foxy.jpeg") center center / cover no-repeat fixed;
+
+    color: var(--text);
+
+    font-family: Arial, sans-serif;
+
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    top: -150px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: #7c3aed;
+    opacity: 0.12;
+
+    filter: blur(150px);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+main {
+    min-height: 100vh;
+    position: relative;
+}
+
+
+/* =========================
+   SCREEN SYSTEM
+========================= */
+
+.boot-screen,
+.birthday-screen,
+.photo-screen,
+.incident-screen,
+.final-screen {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(1.03);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        visibility 0.7s;
+}
+
+.boot-screen.active,
+.birthday-screen.active,
+.photo-screen.active,
+.incident-screen.active,
+.final-screen.active {
+    opacity: 1;
+    visibility: visible;
+
+    transform: scale(1);
+}
+
+
+/* =========================
+   BOOT SCREEN
+========================= */
+
+.terminal {
+    width: 100%;
+    max-width: 700px;
+
+    background: rgba(10, 10, 14, 0.95);
+
+    border: 1px solid #272731;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.7),
+        0 0 80px rgba(168, 85, 247, 0.08);
+
+    overflow: hidden;
+}
+
+.terminal-header {
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 16px;
+
+    background: #121218;
+
+    border-bottom: 1px solid #24242c;
+}
+
+.terminal-header span {
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    background: #444;
+}
+
+.terminal-body {
+    min-height: 330px;
+
+    padding: 35px;
+
+    font-family: monospace;
+
+    font-size: 15px;
+
+    line-height: 2;
+}
+
+.terminal-body p {
+    color: #9ca3af;
+}
+
+#bootStatus {
+    color: #c084fc;
+}
+
+.boot-progress {
+    width: 100%;
+    height: 7px;
+
+    margin: 20px 0;
+
+    background: #1d1d25;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+#bootProgress {
+    width: 0%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        var(--purple),
+        var(--pink)
+    );
+
+    transition: width 0.1s linear;
+}
+
+
+/* =========================
+   COMMON CONTENT
+========================= */
+
+.birthday-content,
+.photo-content,
+.incident-content,
+.final-content {
+    width: 100%;
+    max-width: 800px;
+
+    text-align: center;
+}
+
+.system-label {
+    color: #777784;
+
+    font-family: monospace;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================
+   BIRTHDAY SCREEN
+========================= */
+
+.birthday-content h1 {
+    font-size: clamp(60px, 12vw, 130px);
+
+    line-height: 0.9;
+
+    font-weight: 900;
+
+    letter-spacing: -6px;
+}
+
+.birthday-content h1 span {
+    display: block;
+
+    background: linear-gradient(
+        90deg,
+        #c084fc,
+        #f472b6
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.birthday-content h2 {
+    margin-top: 25px;
+
+    font-size: clamp(30px, 6vw, 55px);
+
+    letter-spacing: 5px;
+}
+
+.intro-text {
+    color: var(--muted);
+
+    margin-top: 20px;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: 1px solid #63339a;
+
+    background: #15121b;
+
+    color: white;
+
+    padding: 14px 24px;
+
+    margin-top: 32px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    font-family: monospace;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+button:hover {
+    background: #7c3aed;
+
+    border-color: #a855f7;
+
+    box-shadow:
+        0 0 30px rgba(168, 85, 247, 0.3);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   FIRST PHOTO
+========================= */
+
+.photo-content {
+    max-width: 700px;
+}
+
+.photo-frame {
+    width: 100%;
+
+    padding: 8px;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #ec4899
+    );
+
+    border-radius: 18px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.6);
+}
+
+.photo-frame img {
+    display: block;
+
+    width: 100%;
+
+    max-height: 55vh;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+}
+
+.photo-content h2 {
+    font-size: clamp(25px, 5vw, 40px);
+}
+
+.photo-content > p:not(.system-label) {
+    color: var(--muted);
+
+    margin-top: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   SONG MEMORY
+========================= */
+
+.incident-content {
+    max-width: 700px;
+}
+
+.song-photo-frame {
+    width: min(100%, 560px);
+
+    margin: 0 auto 28px;
+
+    padding: 8px;
+
+    background: linear-gradient(
+        135deg,
+        #a855f7,
+        #ec4899,
+        #7c3aed
+    );
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.65),
+        0 0 45px rgba(168, 85, 247, 0.12);
+}
+
+.song-photo-frame img {
+    display: block;
+
+    width: 100%;
+
+    max-height: 48vh;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    background: #0c0c11;
+}
+
+.song-text {
+    margin-top: 5px;
+
+    font-size: clamp(24px, 5vw, 42px);
+
+    line-height: 1.5;
+
+    font-weight: 700;
+
+    color: #f5f5f5;
+
+    text-shadow:
+        0 0 20px rgba(168, 85, 247, 0.25);
+}
+
+.incident-intro {
+    color: var(--muted);
+
+    margin-top: 15px;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   FINAL SCREEN
+========================= */
+
+.fox-icon {
+    font-size: 75px;
+
+    margin-bottom: 15px;
+
+    animation:
+        float 2.5s ease-in-out infinite;
+}
+
+.final-content h2 {
+    font-size: clamp(38px, 7vw, 65px);
+
+    margin-bottom: 25px;
+}
+
+.final-content > p:not(.system-label) {
+    max-width: 580px;
+
+    margin: 15px auto;
+
+    color: #a7a7b2;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+.final-content h3 {
+    margin-top: 25px;
+
+    color: #e9d5ff;
+
+    font-size: 21px;
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti-piece {
+    position: fixed;
+
+    top: -20px;
+
+    width: 8px;
+    height: 14px;
+
+    z-index: 100;
+
+    animation:
+        fall 3s linear forwards;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fall {
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .terminal-body {
+        padding: 25px 18px;
+
+        font-size: 12px;
+    }
+
+    .birthday-content h1 {
+        letter-spacing: -3px;
+    }
+
+    .photo-frame img {
+        max-height: 48vh;
+    }
+
+    .song-photo-frame {
+        width: 100%;
+
+        padding: 6px;
+
+        border-radius: 14px;
+    }
+
+    .song-photo-frame img {
+        max-height: 42vh;
+
+        border-radius: 10px;
+    }
+
+    .song-text {
+        font-size: 24px;
+
+        line-height: 1.6;
+    }
+
+    button {
+        width: 100%;
+    }
+}
